@@ -14,10 +14,16 @@
     font-family: 'Nyala';
     font-weight: normal;
     font-style: normal;
+    margin: 0;
+}
+
+.height-100 {
+  height: 100%
 }
 
 .sixty {
     font-size: 60px;
+    padding-bottom: 0;
 }
 
 .fourty {
