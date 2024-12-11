@@ -1,0 +1,159 @@
+footer {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.w-50 {
+    width: 75% !important;
+}
+
+.mymauto {
+    margin: 0 auto;
+}
+
+.mycontainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.myrow {
+    display: block;
+    padding: 0 15px;
+    width: 100%;
+    clear: both;
+}
+
+.mycol1 {
+    margin: 0 10px;
+    width: 8.333%;
+    margin: 0;
+    float: left;
+}
+
+.mycol2 {
+    margin: 0 10px;
+    width: 16.66%;
+    margin: 0;
+    float: left;
+}
+
+.mycol3 {
+    margin: 0 10px;
+    width: 25%;
+    margin: 0;
+    float: left;
+}
+
+.mycol4 {
+    margin: 0 10px;
+    width: 33.3%;
+    margin: 0;
+    float: left;
+}
+
+.mycol5 {
+    margin: 0 10px;
+    width: 41.6%;
+    margin: 0;
+    float: left;
+}
+
+.mycol6 {
+    margin: 0 10px;
+    width: 50%;
+    margin: 0;
+    float: left;
+}
+
+.mycol7 {
+    margin: 0 10px;
+    width: 58.33%;
+    margin: 0;
+    float: left;
+}
+
+.mycol8 {
+    margin: 0 10px;
+    width: 66.6%;
+    margin: 0;
+    float: left;
+}
+
+.mycol9 {
+    margin: 0 10px;
+    width: 75%;
+    margin: 0;
+    float: left;
+}
+
+.mycol10 {
+    margin: 0 10px;
+    width: 83.3%;
+    margin: 0;
+    float: left;
+}
+
+.mycol11 {
+    margin: 0 10px;
+    width: 91.6%;
+    margin: 0;
+    float: left;
+}
+
+.mycol12 {
+    margin: 0 10px;
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    .mycolmd1 {
+        width: 8.333% !important;
+    }
+    
+    .mycolmd2 {
+        width: 16.66% !important;
+    }
+    
+    .mycolmd3 {
+        width: 25% !important;
+    }
+    
+    .mycolmd4 {
+        width: 33.3% !important;
+    }
+    
+    .mycolmd5 {
+        width: 41.6% !important;
+    }
+    
+    .mycolmd6 {
+        width: 50% !important;
+    }
+    
+    .mycolmd7 {
+        width: 58.33% !important;
+    }
+    
+    .mycolmd8 {
+        width: 66.6% !important;
+    }
+    
+    .mycolmd9 {
+        width: 75% !important;
+    }
+    
+    .mycolmd10 {
+        width: 83.3% !important;
+    }
+    
+    .mycolmd11 {
+        width: 91.6% !important;
+    }
+
+    .mycolmd12 {
+        width: 100% !important;
+    }
+}  
