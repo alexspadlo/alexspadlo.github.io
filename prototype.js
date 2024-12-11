@@ -614,3 +614,140 @@
     // EXCLUDE
 
     // MODIFY
+
+    // ---------------------------------------------------------------------
+// Array methods:
+
+    // Remove duplications of an array string
+    let myArr = [...new Set(['batata', 'bacon', 'batata', 'banana', 'arroz', 'bacon', 'batata'])]
+    // ['batata', 'bacon', 'banana', 'arroz']
+    
+    // .sort
+    // String comparison:
+    myArr =  [{ obj: 'Batata'}, { obj: 'Arroz'}].sort((a, b) => (b.obj).localeCompare(a.obj))
+
+    // Number comparison
+    myArr = [1, 22, 4, 9].sort((a, b) => a - b)
+    // Sort results must be a number that's why a - b You can invert the result by:
+    // (A - B) or (B - A)
+
+    // .slice
+    // Cutting your array in a specific start and end....
+    myArr = ['batata', 'bacon', 'banana', 'arroz'].slice(1, 2)
+    // ['bacon']
+
+    // join
+    // Transform the array in a string you can declare a separator,
+    // Ideally, you use in an ARRAY OF STRING
+    myArr = ['batata', 'bacon', 'banana', 'arroz'].join(' - ')
+    // 'batata - bacon - banana - arroz'
+
+    // reverse
+    // Invert the order of the array
+    [myArr = 'batata', 'bacon', 'banana', 'arroz'].reverse()
+    // ['arroz', 'banana', 'bacon', 'batata']
+
+    // flat
+    myArr = [[[[[[[[[[[[[['batata']]]]]]]]]]]]]].flat(Infinity)
+    // ['batata']
+
+    // isArray
+    // Check if an array is a valid array.
+    myArr = Array.isArray([])
+    // true
+    myArr = Array.isArray(true)
+    // false
+
+    // includes
+    // Check if has exactly the value inside of an Array
+    // Usually you will do this in an ARRAY OF STRING
+    myArr =  ['batata', 'bacon', 'banana', 'arroz'].includes('ban')
+    // false
+    myArr =  ['batata', 'bacon', 'banana', 'arroz'].includes('banana')
+    // true
+
+    // fill
+    // Create an array from N numbers, and fill with some content
+    myArr = Array(5).fill('batata')
+    // ['batata', 'batata', 'batata', 'batata', 'batata']
+
+    // length
+    // Check the length of the array.
+    myArr = ['batata', 'batata', 'batata', 'batata', 'batata'].length
+    // 5
+    // Get the first element
+    myArr = ['batata', 'bacon', 'banana', 'arroz'] 
+    const [firstElement] = myArr || [] 
+    console.log(firstElement)
+    // 'batata'
+    
+    // Get the last element
+    const lastElem = myArray[myArray.length - 1] 
+    console.log(lastElem)
+    // 'arroz’
+
+
+    // LOOP ITERATION
+
+
+    // map
+    // Modify the array
+    // Will always return an array of the same size You can modify the content freely
+    myArr = ['ele1', 'ele2', 'ele3']
+    const mynewArray = myArr.map((ele, ind) => { 
+        if(ind === 0) return 'first_element' 
+        if(myArr.length - 1 === ind) return 'last_element' 
+        return ele
+    })
+    // output
+    // ['first_element', 'ele2', 'last_element']
+    // Change a single specific element only in a object
+    myArr = [{ refer: 'ele1'}, { refer: 'ele2'}, { refer: 'ele3'}] 
+    myArr.map(cv => cv?.refer === 'ele2' ? ({...cv, text: 'anothertext'}) : cv) 
+    // output
+    // [{ refer: 'ele1'}, { refer: 'ele2', text: 'anothertext'}, { refer: 'ele3'}]
+
+    // forEach
+    // Iterate / loop only
+    // Don't return any value.
+    // Ideal to do an operation while looping.
+    myArr = ['ele1', 'ele2', 'ele3']
+    myArr.forEach(cv => console.log(cv))
+    // output // ele1 // ele2 // ele3
+    // DON'T DO THIS - FOREACH DON'T RETURN VALUE const wrongWay = myArray.forEach(cv => cv)
+    // wrongWay ---> undefined
+    
+    // filter
+    // Return the value based on criteria
+    // criteria - must be a Boolean (true or false)
+    // Will not modify the array!!!
+    // Is useful to delete/exclude some element on the array
+    myArr = [{ refer: 'ele1'}, { refer: 'ele2'}, { refer: 'ele3'}, { refer: null }] // myArray?.filter(cv => cv.refer)
+    // output
+
+    myArr = [{ refer: 'ele1'}, { refer: 'ele2'}, { refer: 'ele3'}]
+    // PAY ATTENTION.... is not returning refer only as strings.
+    // It's returning all elements that contain refer WITHOUT modifying the array.
+
+    // some
+    // Return true or false
+    // Good to check if something is inside of an array (Object, Or complex structure) If is STRING... use Includes --- UNLESS you must lowercase.... so, then Some is
+    // better.
+
+    // BAD
+    // if(myobj.filter(cv => cv.email === 'asdas@globechain.com').length > 0) {
+    // }
+    // if(myobj.map(cv => cv.email).includes('asdas@globechain.com')) { // }
+    
+    // GOOD
+    // if(myobj.some(cv => cv.email === 'asdas@globechain.com')) { // }
+
+
+    // find
+    // Find and pop out the element if exist. Will not modify your array.
+    
+    // BAD
+    // const [firstObj] = myobj.filter(cv => cv.email === 'asdas@globechain.com')
+    
+    // GOOD
+    // const firstObj = myobj.find(cv => cv.email === 'asdas@globechain.com')
