@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search bar</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Search bar with style" />
+    <meta name="keywords" content="html search bar" />
+    <link rel="stylesheet" href="./myStyle.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script>
+        const inputChange = () => {
+            const searchInput = document.querySelector('#search')
+            const closeIcon = document.querySelector('#closeicon')
+            const isValid = !!searchInput.value.trim()
+            // baseVal only for SVG
+
+            // NOT NEEDED BUT AVOID CALL MULTIPLE TIMES THE SAME THING AND INJECT IN THE HTML
+            // if(isValid && !closeIcon.className.baseVal.includes('d-none')) return null
+            // if(!isValid && closeIcon.className.baseVal.includes('d-none')) return null
+            
+            closeIcon.className.baseVal = `closeIcon ${isValid ? '' : 'd-none'}`.trim()
+            return null
+        }
+
+        const closeClick = () => {
+            const searchInput = document.querySelector('#search')
+            searchInput.value = ''
+            return inputChange()
+        }
+
+        window.addEventListener('load', () => {
+            const searchInput = document.querySelector('#search')
+            const closeIcon = document.querySelector('#closeicon')
+            searchInput.addEventListener('keyup', inputChange) // use as onchange please
+            closeIcon.addEventListener('click', closeClick)
+        })
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="py-5">My header</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <section class="searchsection">
+                        <input id="search" type="text" placeholder="Search posts" class="inputcontrol" />
+                        <svg class="searchIcon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.09089 0C14.0908 0 18.1818 4.09096 18.1818 9.09128C18.1818 11.2731 17.4091 13.273 16.1363 14.8186L19.7273 18.4096C20.0909 18.7732 20.0909 19.3187 19.7273 19.6824C19.5454 19.9095 19.3182 20.0005 19.0908 20.0005C18.8636 20.0005 18.6362 19.9097 18.4545 19.7278L14.8635 16.1368C13.2726 17.4096 11.2727 18.1823 9.09097 18.1823C4.09103 18.1823 7.05719e-05 14.0913 7.05719e-05 9.09137C-8.2016e-05 4.09104 4.09103 8.18189e-05 9.09097 8.18189e-05L9.09089 0ZM9.09089 16.3638C13.0911 16.3638 16.3638 13.0911 16.3638 9.09089C16.3637 5.0911 13.0909 1.81833 9.09089 1.81833C5.09071 1.81833 1.81794 5.0911 1.81794 9.09128C1.81794 13.0911 5.09071 16.3638 9.09089 16.3638Z" fill="#939393"/>
+                            </svg>
+                        <svg id="closeicon" class="closeIcon d-none" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="24" height="24" rx="12" fill="#939393"/>
+                                <g clip-path="url(#clip0_3_215)">
+                                <path d="M6.70711 8.12129C6.31658 7.73077 6.31658 7.0976 6.70711 6.70708C7.09763 6.31655 7.7308 6.31655 8.12132 6.70708L17.2969 15.8826C17.6874 16.2732 17.6874 16.9063 17.2969 17.2968C16.9064 17.6874 16.2732 17.6874 15.8827 17.2968L6.70711 8.12129Z" fill="white"/>
+                                <path d="M15.8827 6.70708C16.2732 6.31656 16.9064 6.31656 17.2969 6.70708C17.6874 7.0976 17.6874 7.73077 17.2969 8.12129L8.12132 17.2968C7.7308 17.6874 7.09763 17.6874 6.70711 17.2968C6.31658 16.9063 6.31658 16.2732 6.70711 15.8826L15.8827 6.70708Z" fill="white"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_3_215">
+                                <rect width="12" height="12" fill="white" transform="translate(6 6)"/>
+                                </clipPath>
+                                </defs>
+                            </svg>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <hr />
+                    <p>Main footer</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
